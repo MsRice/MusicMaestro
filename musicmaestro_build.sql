@@ -38,7 +38,6 @@ CREATE TABLE IF NOT EXISTS `music_maestro_schema`.`songs` (
   `title` VARCHAR(45) NULL,
   `artist` VARCHAR(145) NULL,
   `release_date` DATE NULL,
-  `genre` VARCHAR(445) NULL,
   `cover_link` VARCHAR(445) NULL,
   `track_link` VARCHAR(445) NULL,
   `created_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
