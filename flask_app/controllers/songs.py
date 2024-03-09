@@ -12,7 +12,21 @@ from flask_app.controllers.users import is_logged_in
 def song_wall():
     if is_logged_in():
         user_info = session['user_info']
+        game_of_10 = Song.game_of_10()
 
-        return render_template("music_maestro.html", user_info=user_info)
+        quiz = []
+        for question in game_of_10:
+            data = {
+                'id': question['id']
+            }
+            new_question = [question['title']]
+
+            fluff = Song.question_fluff(data)
+            for answer in fluff:
+                new_question.append(answer['title'])
+
+           # print(new_question)
+            quiz.append(new_question)
+        return render_template("music_maestro.html", user_info=user_info, game_of_10=game_of_10, quiz=quiz)
     else:
         return redirect('/')
