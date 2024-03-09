@@ -13,3 +13,19 @@ class Song:
         self.track_link = data['track_link']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+
+    @classmethod
+    def game_of_10(cls):
+        query = "SELECT * FROM songs ORDER BY  rand() LIMIT 10;"
+
+        results = connectToMySQL('music_maestro_schema').query_db(query)
+
+        return results
+
+    @classmethod
+    def question_fluff(cls, data):
+        query = "SELECT * FROM songs WHERE NOT id = %(id)s ORDER BY  rand() LIMIT 3;"
+
+        results = connectToMySQL('music_maestro_schema').query_db(query, data)
+
+        return results
