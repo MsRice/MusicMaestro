@@ -1,4 +1,5 @@
-const tr = document.querySelector('#scoreboard');
+const x = document.getElementById('user_id').innerHTML;
+const tr = document.querySelector('#scoreboard-' + x);
 
 
 
@@ -22,6 +23,7 @@ tr.addEventListener('click', (event) => {
             span.textContent = input.value;
             td.insertBefore(span, input);
             td.removeChild(input);
+
             button.textContent = 'edit';
         }
     }

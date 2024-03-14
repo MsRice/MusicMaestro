@@ -16,23 +16,23 @@
 </head>
 
 <body class="bg">
-    <h1 class="greeting">Hello, Maestro {{user_info}}!</h1>
+    <h1 class="greeting">Hello, Maestro {{user_info['first_name']}}!</h1>
     <div class="container">
         <div class="game_area">
 
-            <form action="/game_play" method="post">
+            <form action="/game_play">
                 <div class="gameplay">
                     <h2>Play Game</h2>
-                    <button action="/game_play" method="post" class="start_quiz" role="button">Let's Go
+                    <button action="/game_play" class="start_quiz" role="button">Let's Go
                         Maestro!</button>
                 </div>
 
             </form>
 
-            <form action="/scoreboard" method="post">
+            <form action="/scoreboard">
 
                 <div class="scoreboard">
-                    <button action="/scoreboard" method="post" class="start_quiz" role="button">Scoreboard</button>
+                    <button action="/scoreboard" class="start_quiz" role="button">Scoreboard</button>
                 </div>
             </form>
 

@@ -64,3 +64,15 @@ class User:
         query = "INSERT INTO users (first_name , last_name , email , password) VALUES ( %(first_name)s , %(last_name)s , %(email)s , %(password)s);"
 
         connectToMySQL('music_maestro_schema').query_db(query, data)
+
+        query1 = "SELECT * FROM users WHERE email = %(email)s;"
+
+        user = connectToMySQL('music_maestro_schema').query_db(query1, data)
+
+        print(user)
+        data = {
+            'user_id': user[0]['id']
+        }
+
+        query2 = "INSERT INTO messages (comment, user_id) VALUES ('Null' , %(user_id)s);"
+        connectToMySQL('music_maestro_schema').query_db(query2, data)

@@ -69,6 +69,7 @@ def is_logged_in():
 
     is_Logged = False
     print("is_log", is_Logged)
+
     if 'user_info' in session:
         is_Logged = True
         return is_Logged
