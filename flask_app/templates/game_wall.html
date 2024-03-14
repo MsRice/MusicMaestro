@@ -43,7 +43,7 @@
                 <div class="player">
                     <img class="playing" src="../static/img/giphy.gif">
 
-                    <audio src="{{quiz[0]['track_link']}}" controls allows="autoplay">
+                    <audio src="{{game_of_10['track_link']}}" controls allows="autoplay">
 
                     </audio>
 
@@ -52,7 +52,7 @@
                     <div class="col-1">
                         <div class="answer-button" id="answer-a">
                             <form action="/song_choice" method="post">
-                                <input type="hidden" name="correct-answer" value="{{quiz[0]['id']}}">
+                                <input type="hidden" name="correct-answer" value="{{game_of_10['id']}}">
                                 <button type="submit">
                                     <img class="album-image" src="{{quiz[0]['cover_link']}}" alt="choice_a">
                                     <input type="hidden" name="choice" value="{{quiz[0]['id']}}">
@@ -63,7 +63,7 @@
                         </div>
                         <div class="answer-button">
                             <form action="/song_choice" method="post">
-                                <input type="hidden" name="correct-answer" value="{{quiz[0]['id']}}">
+                                <input type="hidden" name="correct-answer" value="{{game_of_10['id']}}">
                                 <button type="submit">
                                     <img class="album-image" src="{{quiz[1]['cover_link']}}" alt="choice_b">
                                     <input type="hidden" name="choice" value="{{quiz[1]['id']}}">
@@ -76,7 +76,7 @@
                     <div class="col-2">
                         <div class="answer-button">
                             <form action="/song_choice" method="post">
-                                <input type="hidden" name="correct-answer" value="{{quiz[0]['id']}}">
+                                <input type="hidden" name="correct-answer" value="{{game_of_10['id']}}">
                                 <button type="submit">
                                     <img class="album-image" src="{{quiz[2]['cover_link']}}" alt="choice_c">
                                     <input type="hidden" name="choice" value="{{quiz[2]['id']}}">
@@ -86,7 +86,7 @@
                         </div>
                         <div class="answer-button">
                             <form action="/song_choice" method="post">
-                                <input type="hidden" name="correct-answer" value="{{quiz[0]['id']}}">
+                                <input type="hidden" name="correct-answer" value="{{game_of_10['id']}}">
                                 <button type="submit">
                                     <img class="album-image" src="{{quiz[3]['cover_link']}}" alt="choice_d">
                                     <input type="hidden" name="choice" value="{{quiz[3]['id']}}">
