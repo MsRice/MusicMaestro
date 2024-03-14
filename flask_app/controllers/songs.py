@@ -62,7 +62,7 @@ def game_play():
                 quiz.append(answer)
 
             random.shuffle(quiz)
-            return render_template('game_wall.html', user_info=user_info,  quiz=quiz, count=count)
+            return render_template('game_wall.html', user_info=user_info,  quiz=quiz, count=count, game_of_10=game_of_10[x])
 
         else:
             session['new_game'] = 0

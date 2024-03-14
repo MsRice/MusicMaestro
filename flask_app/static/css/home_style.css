@@ -4,8 +4,25 @@ html {
 }
 
 .greeting {
-    color: black;
+    font-size: 50px;
+    font-weight: 600;
+    background-image: conic-gradient(#553c9a 30%, #ee4b2b 40%, #ee4b2b 70%, #00c2cb 80%, #553c9a);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
     text-align: center;
+}
+
+.name-gamer {
+    border: 3px solid black;
+    border-radius: 25px;
+    background-color: rgba(128, 6, 243, 0.336);
+    padding: 20px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .bg {
