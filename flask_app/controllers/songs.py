@@ -1,6 +1,8 @@
 from flask_app import app
 from flask import render_template, redirect, request, session
 
+import random
+
 from flask_app.models.message import Message
 from flask_app.models.song import Song
 from flask_app.models.user import User
@@ -58,6 +60,8 @@ def game_play():
             fluff = Song.question_fluff(data)
             for answer in fluff:
                 quiz.append(answer)
+
+            random.shuffle(quiz)
             return render_template('game_wall.html', user_info=user_info,  quiz=quiz, count=count)
 
         else:
@@ -77,7 +81,7 @@ def game_play():
             fluff = Song.question_fluff(data)
             for answer in fluff:
                 quiz.append(answer)
-
+            random.shuffle(quiz)
             return render_template('game_wall.html', user_info=user_info, game_of_10=game_of_10, quiz=quiz)
 
     else:
