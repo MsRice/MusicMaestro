@@ -1,28 +1,35 @@
-// -- Spotify API Fetching Logic 
-
-function fetchSongsFromSpotifyAPI() {
-    // Make API calls using your Python/Flask backend
-    // Return an array of song objects with properties:
-    //    * artistName
-    //    * songTitle
-    //    * albumImageUrl
-    //    * audioPreviewUrl 
-}
 
 // -- Global Variables --
-const songData = fetchSongsFromSpotifyAPI();
+
 let currentQuestion = 0;
 let correctScore = 0;
 let incorrectScore = 0;
 const totalQuestions = 10;
-let currentSong;
+let currentSongid = '';
+
+let question_1 = {
+    id: document.getElementById(ch),
+    title: "give me one reason",
+    artist: 'tracey'
+}
+
+
+function answerChoice() {
+    let choice = parseInt(document.getElementById('choice_a').innerHTML);
+    let correct = parseInt(document.getElementById('correct-answer').innerHTML);
+
+    document.getElementById('answer').innerHTML = question_1.id
+}
+
+
+scoreIncorrect = document.getElementById('choice_a');
 
 // -- DOM References --
-const playButton = document.querySelector('.play-button');
-const answerButtons = document.querySelectorAll('.answer-button');
-const scoreCorrect = document.getElementById('correct-score');
-const scoreIncorrect = document.getElementById('incorrect-score');
-const feedback = document.getElementById('feedback');
+playButton = document.querySelector('.play-button');
+answerButtons = document.querySelectorAll('.answer-button');
+scoreCorrect = document.getElementById('correct-score');
+scoreIncorrect = document.getElementById('incorrect-score');
+feedback = document.getElementById('feedback');
 
 // -- Event Listeners --
 playButton.addEventListener('click', startGame);

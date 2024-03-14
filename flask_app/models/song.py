@@ -32,9 +32,24 @@ class Song:
 
     @classmethod
     def get_leaderboard(cls):
-        query = "SELECT users.id , first_name ,last_name ,score , messages.comment FROM users \
+        query = "SELECT users.id , first_name ,last_name ,score , messages.comment, messages.id as message_id FROM users \
             LEFT JOIN messages ON users.id = user_id;"
 
         results = connectToMySQL('music_maestro_schema').query_db(query)
 
         return results
+
+    @classmethod
+    def add_score(cls, data):
+        query = "SELECT score FROM users WHERE id = %(id)s;"
+
+        score = connectToMySQL('music_maestro_schema').query_db(query, data)
+
+        x = data['score'] + score[0]['score']
+        data['score'] = x
+
+        query1 = "UPDATE users \
+            SET score = %(score)s \
+                WHERE id = %(id)s;"
+
+        connectToMySQL('music_maestro_schema').query_db(query1, data)
