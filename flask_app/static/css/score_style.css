@@ -4,8 +4,14 @@ html {
 }
 
 .greeting {
-    color: black;
-    text-align: center;
+    font-size: 115px;
+    font-weight: 600;
+
+    background-image: conic-gradient(#553c9a 30%, #ee4b2b 40%, #ee4b2b 70%, #00c2cb 80%, #553c9a);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+
 }
 
 .bg {
@@ -15,6 +21,13 @@ html {
     background-image: linear-gradient(-45deg, rgb(27, 163, 173) 0%, rgb(47, 228, 241) 25%, rgb(37, 238, 198) 51%, rgb(31, 231, 178) 100%);
     -webkit-animation: AnimateBG 20s ease infinite;
     animation: AnimateBG 20s ease infinite;
+}
+
+.wrap {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 @-webkit-keyframes AnimateBG {

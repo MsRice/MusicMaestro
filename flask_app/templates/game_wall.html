@@ -13,22 +13,25 @@
 
 <body class="bg">
     <div class="navigation">
-        <div>
+        <div class="name-gamer">
             <h1 class="greeting"> Gamer: {{user_info['first_name']}}</h1>
         </div>
-        <div class="quit-btn">
-            <form action="/music_maestro">
-                <button class="start_quiz">
-                    Quit to home!
-                </button>
-            </form>
-        </div>
-        <div class="logout-btn">
-            <form action="/logout" method="post">
-                <button class="start_quiz">
-                    Logout
-                </button>
-            </form>
+        <div class="buttons">
+
+            <div class="col-1">
+                <form action="/music_maestro">
+                    <button class="start_quiz">
+                        Quit to home!
+                    </button>
+                </form>
+            </div>
+            <div class="col-2">
+                <form action="/logout" method="post">
+                    <button class="start_quiz">
+                        Logout
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
     <div>
@@ -41,11 +44,13 @@
 
             <div>
                 <div class="player">
-                    <img class="playing" src="../static/img/giphy.gif">
+                    <div>
+                        <img class="playing" src="../static/img/giphy.gif">
 
-                    <audio src="{{game_of_10['track_link']}}" controls allows="autoplay">
+                        <audio src="{{game_of_10['track_link']}}" controls allows="autoplay">
 
-                    </audio>
+                        </audio>
+                    </div>
 
                 </div>
                 <div class="answer-choices">
